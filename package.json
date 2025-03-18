@@ -1,7 +1,7 @@
 {
   "name": "company-email-better-auth",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Company email better auth",
   "author": "Muhamed Ragab",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.28.1",
     "@types/bun": "latest"
   },
   "peerDependencies": {
