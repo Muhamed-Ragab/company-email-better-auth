@@ -1,5 +1,11 @@
 # company-email-better-auth
 
+## 0.1.4
+
+### Patch Changes
+
+- Remove unused code and export company-email-validator
+
 ## 0.1.3
 
 ### Patch Changes

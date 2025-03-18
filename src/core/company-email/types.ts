@@ -1,4 +1,4 @@
-export type VerificationOptions = {
+export type CompanyEmailOptions = {
   /**
    * Time in seconds for the verification token to expire
    * @default 60 * 60 * 24 (1 day)

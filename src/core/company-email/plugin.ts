@@ -11,7 +11,7 @@ import {
   sendEmailVerificationMetadata,
   verifyEmailMetadata,
 } from "./metadata";
-import type { VerificationOptions } from "./types";
+import type { CompanyEmailOptions } from "./types";
 
 /**
  * Plugin for company email verification
@@ -30,7 +30,7 @@ export const companyEmail = (
       expires: 60 * 60 * 24,
     },
     sendEmailVerification,
-  }: VerificationOptions = {} as VerificationOptions
+  }: CompanyEmailOptions = {} as CompanyEmailOptions
 ) =>
   ({
     id: "company-email",
