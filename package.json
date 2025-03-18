@@ -1,12 +1,24 @@
 {
-  "name": "comapany-email-better-auth",
-  "module": "index.ts",
+  "name": "company-email-better-auth",
   "type": "module",
+  "version": "0.1.0",
+  "description": "Company email better auth",
+  "author": "Muhamed Ragab",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "types": "index.d.ts",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5.8.2"
   },
   "dependencies": {
     "better-auth": "^1.2.4",
