@@ -1,5 +1,11 @@
 # company-email-better-auth
 
+## 0.1.5
+
+### Patch Changes
+
+- Add husky & lint-staged & rebuild
+
 ## 0.1.4
 
 ### Patch Changes
