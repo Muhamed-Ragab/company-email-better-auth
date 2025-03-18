@@ -1,0 +1,16 @@
+{
+  "name": "comapany-email-better-auth",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "better-auth": "^1.2.4",
+    "company-email-validator": "^1.1.0",
+    "zod": "^3.24.2"
+  }
+}
