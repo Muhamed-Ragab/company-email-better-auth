@@ -1,5 +1,5 @@
 bun test
 bun run lint-staged
 bun run build
-git add .
-git push
+git add -A .
+git push --tags
