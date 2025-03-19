@@ -1,5 +1,17 @@
 # company-email-better-auth
 
+## 0.1.7
+
+### Patch Changes
+
+- Update README.md
+
+## 0.1.6
+
+### Patch Changes
+
+- Update package.json & README.md and pre-commit
+
 ## 0.1.5
 
 ### Patch Changes

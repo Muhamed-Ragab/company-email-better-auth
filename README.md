@@ -25,31 +25,6 @@ pnpm add company-email-verification
 
 ### Quick Start
 
-```ts
-import { companyEmail } from "company-email-verification";
-
-import { verifyCompanyEmail } from "company-email-verification";
-
-const options = {
-  allowedEmails: ["@company.com"],
-  sendEmailVerification: async ({ email, url, token }) => {
-    // Implement your email sending logic here
-    await sendEmail({
-      to: email,
-      subject: "Verify your email",
-      body: `Click here to verify: ${url}`,
-    });
-  },
-};
-
-const { token, verificationUrl } = await verifyCompanyEmail(
-  "user@company.com",
-  options
-);
-```
-
-## Full Implementation Example
-
 ```typescript
 import { betterAuth } from "better-auth";
 import { companyEmail } from "company-email-better-auth";
@@ -72,6 +47,17 @@ export const auth = betterAuth({
       },
     }),
   ],
+});
+```
+
+### Client Plugin Usage
+
+```typescript
+import { betterAuthClient } from "better-auth/client";
+import { companyEmailClient } from "company-email-better-auth";
+
+export const client = betterAuthClient({
+  plugins: [companyEmailClient()],
 });
 ```
 
