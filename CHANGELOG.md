@@ -1,5 +1,11 @@
 # company-email-better-auth
 
+## 0.1.8
+
+### Patch Changes
+
+- Update README.md
+
 ## 0.1.7
 
 ### Patch Changes

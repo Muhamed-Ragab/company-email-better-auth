@@ -53,10 +53,10 @@ export const auth = betterAuth({
 ### Client Plugin Usage
 
 ```typescript
-import { betterAuthClient } from "better-auth/client";
+import { createAuthClient } from "better-auth/client";
 import { companyEmailClient } from "company-email-better-auth";
 
-export const client = betterAuthClient({
+export const client = createAuthClient({
   plugins: [companyEmailClient()],
 });
 ```
