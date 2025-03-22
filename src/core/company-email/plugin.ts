@@ -29,13 +29,13 @@ export const companyEmail = (
       cookieName: "temp-verification",
       expires: 60 * 60 * 24,
     },
-    sendEmailVerification,
+    sendCompanyEmailVerification,
   }: CompanyEmailOptions = {} as CompanyEmailOptions
 ) =>
   ({
     id: "company-email",
     endpoints: {
-      sendEmailVerification: createAuthEndpoint(
+      sendCompanyEmailVerification: createAuthEndpoint(
         "/company-email/send-verification-email",
         {
           method: "POST",
@@ -84,7 +84,7 @@ export const companyEmail = (
               expiresAt: new Date(new Date().setSeconds(expiresIn)),
             });
 
-            await sendEmailVerification({
+            await sendCompanyEmailVerification({
               email,
               url: callbackUrl || ctx.context.baseURL,
               token,
@@ -102,7 +102,7 @@ export const companyEmail = (
           }
         }
       ),
-      verifyEmailVerification: createAuthEndpoint(
+      verifyCompanyEmailVerification: createAuthEndpoint(
         "/company-email/verify-email",
         {
           method: "GET",

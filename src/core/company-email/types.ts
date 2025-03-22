@@ -42,7 +42,7 @@ export type CompanyEmailOptions = {
   /**
    * Send email verification function
    */
-  sendEmailVerification: (options: {
+  sendCompanyEmailVerification: (options: {
     email: string;
     url: string;
     token: string;

@@ -1,5 +1,11 @@
 # company-email-better-auth
 
+## 0.1.9
+
+### Patch Changes
+
+- refactor: Change naming convention for better readabilty
+
 ## 0.1.8
 
 ### Patch Changes
