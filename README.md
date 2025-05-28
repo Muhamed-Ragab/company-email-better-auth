@@ -5,14 +5,17 @@
 
 A robust TypeScript library for handling company email verification processes with flexible configuration options.
 
-## Features
+---
 
+## Features
 - 🕒 Configurable token expiration
 - � Automatic token cleanup
 - 📧 Email allowlist support
 - 🔒 Custom token generation
 - 🍪 Cookie storage options
 - 📤 Flexible email sending implementation
+
+---
 
 ## Installation
 
@@ -28,25 +31,41 @@ pnpm add company-email-verification
 ```typescript
 import { betterAuth } from "better-auth";
 import { companyEmail } from "company-email-better-auth";
-
-// Application-specific imports
 import { sendEmail } from "../email/email.service";
 
 export const auth = betterAuth({
   plugins: [
-    // Company Email Verification Plugin
     companyEmail({
       expiresIn: 60 * 60, // 1 hour expiration
       allowedEmails: ["technozone019@gmail.com", "voka5050@gmail.com"],
       async sendEmailVerification({ email, url, token }) {
-        await sendEmail("companyEmailVerification", {
-          to: email,
-          url,
-          token,
-        });
+        await sendEmail("companyEmailVerification", { to: email, url, token });
       },
     }),
   ],
+});
+```
+
+## Usage
+
+### Sending a Verification Email
+
+```typescript
+await auth.api.sendCompanyEmailVerification({
+  body: {
+    email,
+    callbackUrl: `${env.APP_ORIGIN}/verify-email?email=${email}`,
+  },
+});
+```
+
+### Verifying a Token
+
+```typescript
+await auth.api.verifyCompanyEmailVerification({
+  query: {
+    token,
+  },
 });
 ```
 
@@ -69,23 +88,18 @@ export const client = createAuthClient({
 interface CompanyEmailOptions {
   /** Token expiration time in seconds (default: 86400 [1 day]) */
   expiresIn?: number;
-
   /** Disable automatic token cleanup (default: false) */
   disableCleanup?: boolean;
-
   /** Array of allowed email domains/addresses (default: []) */
   allowedEmails?: string[];
-
   /** Custom token generator function (default: 32-character random string) */
   generateToken?: () => Promise<string> | string;
-
   /** Cookie storage configuration */
   storeCookieAfterVerification?: {
     enabled: boolean;
     cookieName?: string;
     expires?: number;
   };
-
   /** Required email sending implementation */
   sendEmailVerification: (options: {
     email: string;
@@ -106,9 +120,7 @@ allowedEmails: ["@ourcompany.com", "specific.user@partner.com"];
 #### Custom Token Generation
 
 ```ts
-generateToken: async () => {
-  return crypto.randomBytes(16).toString("hex");
-};
+generateToken: async () => crypto.randomBytes(16).toString("hex");
 ```
 
 #### Cookie Storage

@@ -1,5 +1,11 @@
 # company-email-better-auth
 
+## 0.1.10
+
+### Patch Changes
+
+- improve README structure and add usage examples
+
 ## 0.1.9
 
 ### Patch Changes
